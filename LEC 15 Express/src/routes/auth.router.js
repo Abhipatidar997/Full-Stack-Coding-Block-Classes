@@ -1,10 +1,11 @@
-const exports = require('express')
+const express = require("express")
 
 let router = express.Router()
 
-router.get ( "/", (req, res) => {
-    res.send("Auth home route")
-    })
+
+router.get("/", (req, res)=>{
+    res.send("home route")
+})
 
 
-module.exports = router;
+module.exports = router

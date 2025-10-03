@@ -1,0 +1,20 @@
+<nav>
+    <h1>LOGO</h1>
+    <div class="nav-btn">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="/posts/create">create</a>
+       <% if(user){ %>
+         <a href="/users/profile/<%= user._id %>">
+            <img  src=<%= user.profile %> alt="profile">
+        </a>
+        <% } %>
+        <div class="login-btn">
+            <% if (!user) { %>
+                <a href="/users/login">login</a>
+           <% }else { %>
+                <a href="/users/logout">logout</a>
+            <% } %>
+        </div>
+    </div> 
+</nav>

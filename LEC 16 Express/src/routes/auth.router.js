@@ -1,14 +1,15 @@
-const express = require('express')
+const express = require("express")
 
-let router = express.Router()
+const router = express.Router()
 
-router.get ( "/:name", (req, res) => {
-    let name = req.params.name  // Extracting name from request parameters
-  
-  
-  
-    console.log(name)            
-    res.send(`Auth home route for ${name}`)
+
+router.get("/:name", (req, res)=>{
+    let {name} = req.params
+    console.log(name);
+    
+    res.send(`Home route for ${name} `)
 })
+
+
 
 module.exports = router

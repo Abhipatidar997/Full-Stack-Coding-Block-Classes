@@ -1,0 +1,26 @@
+<%- include("partial/header") %>
+<h2>Create Page</h2>
+<form action="/posts/create" method="post">
+
+    <label for="title">Title :</label>
+    <input type="text" name="title" id="title">
+
+    <label for="content">Content :</label>
+    <input type="text" name="content" id="content">
+
+
+    <label for="image">Image :</label>
+    <input type="text" name="image" id="image">
+
+    <label for="tags">Tags :</label>
+    <input type="text" name="tags" id="tags">
+
+
+    <button type="submit">Upload</button>
+
+</form>
+
+<%- include("partial/footer") %>
+
+
+

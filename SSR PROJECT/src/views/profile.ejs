@@ -1,0 +1,20 @@
+<%- include("partial/header.ejs", {title })  %>
+
+
+<div class="profile">
+    <div class="left">
+        <img src="<%= user.profile %>" alt="">
+    </div>
+    <div class="right">
+       <div class="top">
+         <h2><%= user.username %></h2>
+        <p><%= user.email %></p>
+       </div>
+       <div class="bottom">
+        <a href="/users/profile/update/<%= user._id %>">Update profile</a>
+       </div>
+    </div>
+</div>
+
+
+<%- include("partial/footer.ejs") %>

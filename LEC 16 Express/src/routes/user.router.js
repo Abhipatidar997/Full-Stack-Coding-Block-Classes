@@ -1,30 +1,30 @@
-const express = require('express')
+const express = require("express")
 
 let router = express.Router()
 
-// router.get ( "/register", (req, res) => {
+
+// router.get("/register",(req,res)=>{
 //     // console.log(req.query)
+//     let {username , email, password} = req.query
 
-//     let { Username, email, password } = req.query
-
-//     console.log("Username:", Username);
-//     console.log("Email:", email);
-//     console.log("Password:", password);
-
-//     res.send("User registration route")
-//     })
+//     console.log("name ===>",username);
+//     console.log("email ===>",email);
+//     console.log("password ===>",password);
+    
+//     res.send("register successful")
+// })
 
 
-router.get ( "/register", (req, res) => {
+
+router.post("/register",(req,res)=>{
     console.log(req.body)
+    let {username , email, password} = req.body
 
-    let { username, email, password } = req.body
+    console.log("name ===>",username);
+    console.log("email ===>",email);
+    console.log("password ===>",password);
+    
+    res.send("register successful")
+})
 
-    console.log("Username:", username);
-    console.log("Email:", email);
-    console.log("Password:", password);
-
-    res.send("User registration route")
-    })
-
-module.exports = router;
+module.exports = router
