@@ -1,0 +1,19 @@
+<%- include("partial/header") %>
+<h2>Update Profile Page</h2>
+<form action="/users/profile/update/<%= user._id %>" method="post" enctype="multipart/form-data">
+
+    <label for="username">username :</label>
+    <input type="text" name="username" id="username" value="<%= user.username %>">
+
+   
+    <label for="profile">Profile :</label>
+    <input type="file" name="profile" id="profile" >
+
+    <button type="submit">Update  Profile</button>
+
+</form>
+
+<%- include("partial/footer") %>
+
+
+
