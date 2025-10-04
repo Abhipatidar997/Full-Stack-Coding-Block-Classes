@@ -14,7 +14,7 @@ require("dotenv").config()
 app.use(cookieParser())
 app.use(morgan("dev"))
 app.use(session({
-  secret: config.JWT_SECRET,
+  secret: config.SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
   cookie : {
