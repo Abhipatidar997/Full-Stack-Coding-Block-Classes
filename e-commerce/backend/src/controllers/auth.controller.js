@@ -1,9 +1,12 @@
 const productModel = require("../models/product.model");
 
+const protected = require("../middleware/protected")
+
 module.exports.indexController = async function (req, res) {
     try {
+        const userId = req.userId
 
-        const products = await productModel.find().populate("author")
+        const products = await productModel.find({ author: userId }).populate("author")
 
         if(products.length === 0){
            return res.status(200).json({message : "products data not found"})
@@ -18,3 +21,5 @@ module.exports.indexController = async function (req, res) {
        
     }
 }
+
+module.exports.protected = protected

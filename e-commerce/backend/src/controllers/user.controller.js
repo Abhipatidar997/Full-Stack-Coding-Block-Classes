@@ -58,21 +58,21 @@ module.exports.registerPostController = async function(req, res) {
 
 
         if(!username){
-            res.status(400).json({message : "username must be required"})
+            return res.status(400).json({message : "username must be required"})
         }
 
         if(!email){
-            res.status(400).json({message : "email must be required"})
+            return res.status(400).json({message : "email must be required"})
         }
 
         if(!password){
-            res.status(400).json({message : "password must be required"})
+            return res.status(400).json({message : "password must be required"})
         }
 
         const alreadyExist = await userModel.findOne({email : email})
 
         if(alreadyExist){
-            res.status(400).json({message : "email already exist"})
+            return res.status(400).json({message : "email already exist"})
         }
 
         const hashedPass = await bcrypt.hash(password, 10)
